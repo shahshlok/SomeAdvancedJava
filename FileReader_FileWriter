@@ -1,0 +1,21 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("your file pathname for the input file");
+            FileWriter writer = new FileWriter("the file pathname to the output file");
+
+            int character;
+
+            while ((character = reader.read()) != -1){
+                writer.write(character);
+            }
+            reader.close();
+            writer.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
