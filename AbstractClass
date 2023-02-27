@@ -1,0 +1,32 @@
+// Abstract classes are generally used to define a standard that must be used by its subclasses
+public class Main {
+    public static void main(String[] args) {
+        // An object can be only be created of a concrete class
+        // Parent p= new Parent(); is an error.
+
+        Child c= new Child();
+        c.abstractEat();
+        c.nonAbstract();
+    }
+}
+abstract class Parent{
+    public void nonAbstract(){
+        System.out.println("Non Abstract Method.");
+    }
+    abstract public void abstractEat();
+}
+// A concrete subclass to an abstract class is formed by overriding all the abstract methods of the superclass.
+class Child extends Parent{
+    @Override
+    public void abstractEat() {
+        System.out.println("Child's abstract method for eating.");
+    }
+    // Child is a concrete class
+}
+
+// An abstract class can be used to form another abstract class which doesn't need to have any abstract classes itself.
+abstract class Child2 extends Parent{
+    public void child2(){
+        System.out.println("Child 2");
+    }
+}
